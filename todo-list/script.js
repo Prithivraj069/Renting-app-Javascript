@@ -1,11 +1,10 @@
 
 
-window.addEventListener("DOMContentLoaded", async function () {
 
-    let response = await axios.get("database.json");
-    let data = response.data;
-     showData(data.customerData);
-    
+window.addEventListener("DOMContentLoaded", async function () {
+    let data = await loadData();
+
+    showData(data.customerData);
     createNewCustomer(data.customerData);
 });
 
