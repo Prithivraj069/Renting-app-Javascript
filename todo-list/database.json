@@ -1,0 +1,39 @@
+{
+     "customerData": [
+    {
+      "id": 1,
+      "name": "Naresh",
+      "location": "little india",
+      "material": "5ft-box",
+      "quantity": 7,
+      "days": 2
+    },
+  
+    {
+        "id": 2,
+        "name": "Prithivraj",
+        "location": "Ferrar park",
+        "material": "6ft-box",
+        "quantity": 8,
+        "days": 4
+    },
+  
+    {
+        "id": 3,
+        "name": "Pranav",
+        "location": "Boong keng",
+        "material": "3ft-box",
+        "quantity": 7,
+        "days": 3
+    },
+  
+    {
+        "id": 4,
+        "name": "Diva",
+        "location": "china Town",
+        "material": "3 * 2 sheet",
+        "quantity": 40,
+        "days": 10
+    }
+]
+}
