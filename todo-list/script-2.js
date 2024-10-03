@@ -49,7 +49,7 @@ async function renderCustomerDetails(todo) {
                 isDone = true;
             }
 
-            updateTask(data, d.id, newTaskName, newLocation, newMaterial, newQuantity, newDays, isDone);
+            updateTask(data.customerData, d.id, newTaskName, newLocation, newMaterial, newQuantity, newDays, isDone);
             renderCustomerDetails(data.customerData); // redraw all the tasks, along with any changes
 
         })
@@ -58,8 +58,8 @@ async function renderCustomerDetails(todo) {
         deleteButton.addEventListener("click", function(){
             let reallyDelete = confirm("Are you sure you want to delete?");
             if (reallyDelete) {
-                deleteTask(data, d.id);
-                renderTasks(data.customerData);
+                deleteTask(data.customerData, d.id);
+                renderCustomerDetails(data.customerData);
             }
         })
 
