@@ -10,6 +10,9 @@ window.addEventListener("DOMContentLoaded", async function () {
     this.document.querySelector("#save-btn").addEventListener('click', function (){
         saveData(data);
     })
+    this.document.querySelector("#saveBtn2").addEventListener('click', function (){
+      saveData(data);
+  })
 });
 
 async function showData(todoData) {
@@ -34,17 +37,16 @@ async function showData(todoData) {
     // edit button to allow us to edit the exisiting data from database
     let editBtn = row.querySelector("#edit-btn");
     editBtn.addEventListener('click', function () {
-    
         let newTaskName = prompt("Enter the new task name: ", todoData[i].name);
         let newLocation = prompt("Enter the new location: ", todoData[i].location);
         let newMaterial = prompt("Enter the new mateiral: ", todoData[i].material);
         let newQuantity = prompt("Enter the new quantity: ", todoData[i].quantity);
         let newDays = prompt("Enter the new task days: ", todoData[i].days);
         let newDone = prompt("Is the task done (y/n)");
-
+       
         let isDone = false;
         if (newDone.toLowerCase() == 'y' ) {
-            isDone = true;
+             isDone = true;
         } else {
           console.log("task is not updated");
         }
@@ -55,7 +57,8 @@ async function showData(todoData) {
     // this is delete function for deleting customer data
     let deleteBtn = row.querySelector("#delete-btn");
     deleteBtn.addEventListener('click', function() {
-      const confirmation = confirm("Do you want to delete the task: " + todoData[i].name + "?");
+     
+      const confirmation = Swal.fire("Do you want to delete the task: " + todoData[i].name + "?");
       if (confirmation) {
           deleteTask(data.customerData,  todoData[i].id);
           showData(todoData);
