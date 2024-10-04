@@ -1,5 +1,5 @@
 
-let BIN_ID = "66fe1657acd3cb34a8904ba1";
+let BIN_ID = "66ff85c0ad19ca34f8b271bd";
 let BASE_API_URL = "https://api.jsonbin.io/v3";
 
 async function loadData() {
@@ -30,15 +30,15 @@ async function saveData(task) {
 
 function updateTask(taskList, taskId, newTaskName, newLocation, newMaterial,newQuantity,newDdays, newIsDone) {
  
-  let index = taskList.findIndex(function(task){
+  let editIndex = taskList.findIndex(function(task){
         return task.id == taskId;
   });
   
-console.log("index",index);
+console.log("index",editIndex);
   // 2. do the replacement
   // make sure index is no null, undefined or 0 etc.
-  if (index) {
-      taskList[index] = {
+  if (editIndex) {
+      taskList[editIndex] = {
     "id": taskId,
     "name": newTaskName,
     "location": newLocation,
@@ -47,18 +47,25 @@ console.log("index",index);
     "days": newDdays,
       "done": newIsDone
       }
+  } else {
+    alert("List is not found");
   }
 }
 
 function deleteTask(tasks, taskIdToDelete) {
 
   // 1. find the index of the task that I want to delete
-  let indexToDelete = tasks.findIndex(function(t){
-      return t.id == taskIdToDelete;
+  let indexToDelete = tasks.findIndex(function(task){
+      return task.id == taskIdToDelete;
   })
 
   // 2. delete the task from the array
-  tasks.splice(indexToDelete, 1);
+  if(indexToDelete != null) {
+    tasks.splice(indexToDelete, 1);
+  } else {
+    alert("Deleting Data is not found in a list")
+  }
+  
 }
 
 function updateTaskDone(tasks, taskId) {

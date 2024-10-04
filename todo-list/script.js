@@ -1,49 +1,114 @@
 
-let data = [];
+let customerData = [
+      {
+        "id": 1,
+        "name": "Naresh",
+        "location": "little india",
+        "material": "5ft-box",
+        "quantity": 7,
+        "days": 2
+      },
+      {
+        "id": 2,
+        "name": "Prithivraj",
+        "location": "Ferrar park",
+        "material": "6ft-box",
+        "quantity": 8,
+        "days": 4
+      },
+      {
+        "id": 3,
+        "name": "Pranav",
+        "location": "Boong keng",
+        "material": "3ft-box",
+        "quantity": 7,
+        "days": 3
+      },
+      {
+        "id": 4,
+        "name": "Diva",
+        "location": "china Town",
+        "material": "3 * 2 sheet",
+        "quantity": 40,
+        "days": 10
+      },
+      {
+        "id": 5,
+        "name": "tan",
+        "location": "Mountbettan",
+        "material": "2 * 4 Sheet",
+        "quantity": "4",
+        "days": "8"
+      },
+      {
+        "id": 6,
+        "name": "Tamil Selvan",
+        "location": "punngol",
+        "material": "3 * 2 Sheet",
+        "quantity": "25",
+        "days": "15"
+      },
+      {
+        "id": 7,
+        "name": "prithivraj",
+        "location": "Singapore",
+        "material": "7ft-box",
+        "quantity": "5",
+        "days": "8"
+      }
+    ];
 
-window.addEventListener("DOMContentLoaded", async function () {
-     data = await loadData();
-    showData(data.customerData);
-    createNewCustomer(data.customerData);
+window.addEventListener("DOMContentLoaded",  function () {
+    //  data = await loadData();
+    showData(customerData);
+    console.log(customerData);
+    // createNewCustomer(data.customerData);
 
-    this.document.querySelector("#save-btn").addEventListener('click', function (){
-        saveData(data);
-    })
+    // this.document.querySelector("#save-btn").addEventListener('click', function (){
+    //     saveData(data);
+    // })
 });
 
-async function showData(todoData) {
-     let tableTag = document.querySelector("#tbody");
-     let table = document.querySelector("#table");
-    tableTag.innerHTML = '';
-    
+ function showData(todoData) {
+    const tbl = document.querySelector("#table");
+  const tblBody = document.querySelector("#tbody");
 
-    for(let i = 0; i < todoData.length; i++) {
-        let row = `
-            <tr scope= "row">
-                <td>${todoData[i].name}</td>
-                <td>${todoData[i].location}</td>
-                <td>${todoData[i].material}</td>
-                <td>${todoData[i].quantity}</td>
-                <td>${todoData[i].days}</td>
-                <td><button class="edit-btn" class="btn btn-dark">Edit</button></td>
-                <td><button class="delete-btn" class="btn btn-danger">Delete</button></td>
-            </tr>
-        `;
-        tableTag.innerHTML += row;
+  for (let i = 0; i < todoData.length; i++) {
+    const row = document.createElement("tr");
+    //  const cell = document.createElement("td");
+    row.innerHTML = `
+        <td>${todoData[i].name}</td>
+        <td>${todoData[i].location}</td>
+        <td>${todoData[i].material}</td>
+        <td>${todoData[i].quantity}</td>
+        <td>${todoData[i].days}</td>
+        <td><button type="button" class="btn btn-dark" id="edit-btn">Edit</button></td>
+         <td><button type="button" class="btn btn-danger" id="delete-btn">Delete</button></td>
+    `;
+    tblBody.appendChild(row);
+
+    let editBtn = row.querySelector("#edit-btn");
+    editBtn.addEventListener('click', function(){
+        alert("this is edit button");
+    })
+   }
+   tbl.appendChild(tblBody);
+    
     }
-    table.addEventListener('click', function (e) {
-
-        let editButton = e.target.classList.contains("edit-btn");
-        alert("this is edit button", editButton);
-    });
     
-    table.addEventListener('click', function (e) {
+    // table.addEventListener('click', function (e) {
 
-        let deleteButton = e.target.classList.contains("delete-btn");
-        alert("this is delete button", deleteButton);
-    });
+    //     let editButton = e.target.classList.contains("edit-btn");
+    //     alert("this is edit button", editButton);
+    // });
     
-}
+    // table.addEventListener('click', function (e) {
+
+    //     let deleteButton = e.target.classList.contains("delete-btn");
+    //     alert("this is delete button", deleteButton);
+    // });
+    
+
 
 
 // showCustomerDetail() funciton is used to show the customer data in the web page
@@ -66,22 +131,22 @@ async function showData(todoData) {
 
 // createNewCustomerData() function is used to create new data and show on
 
-function createNewCustomer(data) {
+// function createNewCustomer(data) {
 
-  let createButton = document.querySelector("#button");
+//   let createButton = document.querySelector("#button");
 
-  createButton.addEventListener("click",  function () {
+//   createButton.addEventListener("click",  function () {
 
-    let nameInput = document.querySelector("#name").value;
-    let locationInput = document.querySelector("#location").value;
-    let materialInput = document.querySelector("#material").value;
-    let quantityInput = document.querySelector("#quantity").value;
-    let daysInput = document.querySelector("#days").value;
+//     let nameInput = document.querySelector("#name").value;
+//     let locationInput = document.querySelector("#location").value;
+//     let materialInput = document.querySelector("#material").value;
+//     let quantityInput = document.querySelector("#quantity").value;
+//     let daysInput = document.querySelector("#days").value;
 
-   addTask(data, nameInput, locationInput, materialInput, quantityInput, daysInput);
-   showData(data);
-  });
-}
+//    addTask(data, nameInput, locationInput, materialInput, quantityInput, daysInput);
+//    showData(data);
+//   });
+// }
 
 
 //  function editData(button) {
