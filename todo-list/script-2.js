@@ -84,43 +84,6 @@ async function showData(todoData) {
 //         <button type="button" class="delete btn btn-danger">Delete</button>
 //         `;
 
-    
-//     let checkbox = liElement.querySelector(".checkbox");
-//     checkbox.checked = d.done;
-//     checkbox.addEventListener("click", function(){
-//         updateTaskDone(tasks, d.id);
-//         renderCustomerDetails(data.customerData);
-//     });
-
-//     let editButton = liElement.querySelector(".edit");
-//         // start the process of editing a task
-//         editButton.addEventListener("click", function(){
-//             let newTaskName = prompt("Enter the new task name: ", d.name);
-//             let newLocation = prompt("Enter the new location: ", d.location);
-//             let newMaterial = prompt("Enter the new mateiral: ", d.material);
-//             let newQuantity = prompt("Enter the new quantity: ", d.quantity);
-//             let newDays = prompt("Enter the new task days: ", d.days);
-//             let newDone = prompt("Is the task done (y/n)");
-
-//             let isDone = false;
-//             if (newDone.toLowerCase() == 'y' ) {
-//                 isDone = true;
-//             }
-
-//             updateTask(data.customerData, d.id, newTaskName, newLocation, newMaterial, newQuantity, newDays, isDone);
-//             renderCustomerDetails(data.customerData); // redraw all the tasks, along with any changes
-
-//         })
-
-//         let deleteButton = liElement.querySelector(".delete");
-//         deleteButton.addEventListener("click", function(){
-//             let reallyDelete = confirm("Are you sure you want to delete?");
-//             if (reallyDelete) {
-//                 deleteTask(data.customerData, d.id);
-//                 renderCustomerDetails(data.customerData);
-//             }
-//         })
-
 //   unorderList.appendChild(liElement);
 
 //   }
@@ -144,7 +107,6 @@ function createNewCustomer(data) {
 
    addTask(data, nameInput, locationInput, materialInput, quantityInput, daysInput);
    showData(data);
-  //  saveData(data);
   });
 }
 

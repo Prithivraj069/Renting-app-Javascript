@@ -64,7 +64,7 @@ function deleteTask(tasks, taskIdToDelete) {
     tasks.splice(indexToDelete, 1);
   } else {
     alert("Deleting Data is not found in a list")
-  }
+  } 
   
 }
 
