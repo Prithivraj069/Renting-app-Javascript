@@ -28,7 +28,7 @@ async function saveData(task) {
  
 }
 
-function updateTask(taskList, taskId, newTaskName, newLocation, newMaterial,newQuantity,newDdays, newIsDone) {
+function updateTask(taskList, taskId, newTaskName, newLocation, newMaterial,newQuantity,newDdays) {
  
   let editIndex = taskList.findIndex(function(task){
         return task.id == taskId;
@@ -45,7 +45,6 @@ console.log("index",editIndex);
     "material": newMaterial,
     "quantity": newQuantity,
     "days": newDdays,
-      "done": newIsDone
       }
   } else {
     alert("List is not found");
@@ -65,7 +64,7 @@ function deleteTask(tasks, taskIdToDelete) {
   } else {
     alert("Deleting Data is not found in a list")
   } 
-  
+
 }
 
 function updateTaskDone(tasks, taskId) {

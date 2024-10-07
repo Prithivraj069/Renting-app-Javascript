@@ -8,7 +8,7 @@
 </head>
 <body>
     <div  id="entryField" class="pt-3 mx-auto" style="width: 600px;">
-        <h2 class="text-center">Enter customer Data</h2>
+        <h2 class="text-center">ENTER CUSTOMER DATA</h2>
 
         <div class="form-floating mb-3">
             <input type="text" id="name" class="form-control" name="customerName" />
@@ -74,6 +74,57 @@
                 <div class="p-2 btn-lg text-center">
                   <button type="button" id="saveBtn2" class="btn btn-success btn-lg"> Save</button>
                 </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch demo modal
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Customer Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-floating mb-3">
+                  <input type="text" id="name" class="form-control" name="customerName" />
+                  <label for="customerName">Name</label>
+                </div>  
+                <div class="form-floating mb-3">
+                  <input type="text" id="location" class="form-control" name="location" />
+                  <label for="location">Location</label>
+                </div>
+                  
+                <div class="form-floating mb-3">
+                  <select name="material" id="material" class="form-select" aria-label="Floating label select example">
+                    <option selected>Open this select menu</option>
+                    <option value="3 * 2 Sheet">3 * 2 sheet</option>
+                    <option value="2 * 4 Sheet">2 * 4 sheet</option>
+                    <option value="3 feet box">3ft box</option>
+                    <option value="4 feet box">4ft box</option>
+                    <option value="5 feet box">5ft box</option>
+                    <option value="7 feet box">7ft box</option>
+                  </select>
+                  <label for="material" >Choose a material</label>
+                </div>
+                 
+                <div class="form-floating mb-3">
+                  <input type="text" id="quantity" class="form-control" name="quantity" />
+                  <label for="quantity">Quantity</label>
+                </div>
+                 
+                <div class="form-floating mb-3">
+                  <input type="text" id="days" class="form-control" name="days" />
+                  <label for="days">No of days</label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="edit-change">Save changes</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -29,7 +29,7 @@ async function showData(todoData) {
         <td>${todoData[i].material}</td>
         <td>${todoData[i].quantity}</td>
         <td>${todoData[i].days}</td>
-        <td><button type="button" class="btn btn-dark" id="edit-btn">Edit</button></td>
+        <td><button type="button" class="btn btn-dark" id="edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button></td>
          <td><button type="button" class="btn btn-danger" id="delete-btn">Delete</button></td>
     `;
     tblBody.appendChild(row);
@@ -37,21 +37,27 @@ async function showData(todoData) {
     // edit button to allow us to edit the exisiting data from database
     let editBtn = row.querySelector("#edit-btn");
     editBtn.addEventListener('click', function () {
-        let newTaskName = prompt("Enter the new task name: ", todoData[i].name);
-        let newLocation = prompt("Enter the new location: ", todoData[i].location);
-        let newMaterial = prompt("Enter the new mateiral: ", todoData[i].material);
-        let newQuantity = prompt("Enter the new quantity: ", todoData[i].quantity);
-        let newDays = prompt("Enter the new task days: ", todoData[i].days);
-        let newDone = prompt("Is the task done (y/n)");
+      let newTaskName = todoData[i].name;
+        let newLocation =  todoData[i].location;
+        let newMaterial =  todoData[i].material;
+        let newQuantity = todoData[i].quantity;
+        let newDays = todoData[i].days;
+
+        // let newTaskName = prompt("Enter the new task name: ", todoData[i].name);
+        // let newLocation = prompt("Enter the new location: ", todoData[i].location);
+        // let newMaterial = prompt("Enter the new mateiral: ", todoData[i].material);
+        // let newQuantity = prompt("Enter the new quantity: ", todoData[i].quantity);
+        // let newDays = prompt("Enter the new task days: ", todoData[i].days);
+      //  let newDone = prompt("Is the task done (y/n)");
        
-        let isDone = false;
-        if (newDone.toLowerCase() == 'y' ) {
-             isDone = true;
-        } else {
-          console.log("task is not updated");
-        }
-        updateTask(data.customerData, todoData[i].id, newTaskName, newLocation, newMaterial, newQuantity, newDays, isDone);
-        showData(todoData);
+        // let isDone = false;
+        // if (newDone.toLowerCase() == 'y' ) {
+        //      isDone = true;
+        // } else {
+        //   console.log("task is not updated");
+        // }
+         updateTask(data.customerData, todoData[i].id, newTaskName, newLocation, newMaterial, newQuantity, newDays);
+         showData(todoData);
     })
 
     // this is delete function for deleting customer data
@@ -109,6 +115,7 @@ function createNewCustomer(data) {
    showData(data);
   });
 }
+
 
 
 
