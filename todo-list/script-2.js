@@ -10,9 +10,9 @@ window.addEventListener("DOMContentLoaded", async function () {
     this.document.querySelector("#save-btn").addEventListener('click', function (){
         saveData(data);
     })
-    this.document.querySelector("#saveBtn2").addEventListener('click', function (){
-      saveData(data);
-  })
+  //   this.document.querySelector("#saveBtn2").addEventListener('click', function (){
+  //     saveData(data);
+  // })
 });
 
 async function showData(todoData) {
@@ -37,11 +37,18 @@ async function showData(todoData) {
     // edit button to allow us to edit the exisiting data from database
     let editBtn = row.querySelector("#edit-btn");
     editBtn.addEventListener('click', function () {
-      let newTaskName = todoData[i].name;
-        let newLocation =  todoData[i].location;
-        let newMaterial =  todoData[i].material;
-        let newQuantity = todoData[i].quantity;
-        let newDays = todoData[i].days;
+      let newTaskName = document.querySelector("#newName");
+      newTaskName.value = todoData[i].name;
+      let newLocation = document.querySelector("#newLocation");
+       newLocation.value =  todoData[i].location;
+       let newMaterial = document.querySelector("#newMaterial");
+         newMaterial.value =  todoData[i].material;
+        let newQuantity = document.querySelector("#newQuantity"); 
+         newQuantity.value = todoData[i].quantity;
+         let newDays = document.querySelector("#newDays");
+         newDays.value = todoData[i].days;
+
+         console.log(data.customerData, todoData[i].id, newTaskName.value, newLocation.value, newMaterial.value, newQuantity.value, newDays.value);
 
         // let newTaskName = prompt("Enter the new task name: ", todoData[i].name);
         // let newLocation = prompt("Enter the new location: ", todoData[i].location);
@@ -56,7 +63,13 @@ async function showData(todoData) {
         // } else {
         //   console.log("task is not updated");
         // }
-         updateTask(data.customerData, todoData[i].id, newTaskName, newLocation, newMaterial, newQuantity, newDays);
+        document.querySelector("#saveBtn2").addEventListener('click', function (){
+          console.log("this is save button");
+          updateTask(data.customerData, todoData[i].id, newTaskName.value, newLocation.value, newMaterial.value, newQuantity.value, newDays.value);
+          saveData(data);
+          showData(todoData);
+
+      })
          showData(todoData);
     })
 

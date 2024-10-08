@@ -71,14 +71,11 @@
                     </tbody>
                 </table>
 
-                <div class="p-2 btn-lg text-center">
+                <!-- <div class="p-2 btn-lg text-center">
                   <button type="button" id="saveBtn2" class="btn btn-success btn-lg"> Save</button>
-                </div>
+                </div> -->
         </div>
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Launch demo modal
-        </button>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -87,17 +84,17 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="form-floating mb-3">
-                  <input type="text" id="name" class="form-control" name="customerName" />
+                <div class="form-floating mb-3" id="nameInput">
+                  <input type="text" id="newName" class="form-control" name="customerName" />
                   <label for="customerName">Name</label>
                 </div>  
                 <div class="form-floating mb-3">
-                  <input type="text" id="location" class="form-control" name="location" />
+                  <input type="text" id="newLocation" class="form-control" name="location" />
                   <label for="location">Location</label>
                 </div>
                   
                 <div class="form-floating mb-3">
-                  <select name="material" id="material" class="form-select" aria-label="Floating label select example">
+                  <select name="material" id="newMaterial" class="form-select" aria-label="Floating label select example">
                     <option selected>Open this select menu</option>
                     <option value="3 * 2 Sheet">3 * 2 sheet</option>
                     <option value="2 * 4 Sheet">2 * 4 sheet</option>
@@ -110,18 +107,18 @@
                 </div>
                  
                 <div class="form-floating mb-3">
-                  <input type="text" id="quantity" class="form-control" name="quantity" />
+                  <input type="text" id="newQuantity" class="form-control" name="quantity" />
                   <label for="quantity">Quantity</label>
                 </div>
                  
                 <div class="form-floating mb-3">
-                  <input type="text" id="days" class="form-control" name="days" />
+                  <input type="text" id="newDays" class="form-control" name="days" />
                   <label for="days">No of days</label>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="edit-change">Save changes</button>
+                <button type="button" class="btn btn-primary" id="saveBtn2">Save changes</button>
               </div>
             </div>
           </div>

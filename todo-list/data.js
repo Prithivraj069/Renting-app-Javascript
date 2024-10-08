@@ -1,5 +1,5 @@
 
-let BIN_ID = "66ff85c0ad19ca34f8b271bd";
+let BIN_ID = "6704a53de41b4d34e43ed770";
 let BASE_API_URL = "https://api.jsonbin.io/v3";
 
 async function loadData() {
