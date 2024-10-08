@@ -49,26 +49,12 @@ async function showData(todoData) {
          newDays.value = todoData[i].days;
 
          console.log(data.customerData, todoData[i].id, newTaskName.value, newLocation.value, newMaterial.value, newQuantity.value, newDays.value);
-
-        // let newTaskName = prompt("Enter the new task name: ", todoData[i].name);
-        // let newLocation = prompt("Enter the new location: ", todoData[i].location);
-        // let newMaterial = prompt("Enter the new mateiral: ", todoData[i].material);
-        // let newQuantity = prompt("Enter the new quantity: ", todoData[i].quantity);
-        // let newDays = prompt("Enter the new task days: ", todoData[i].days);
-      //  let newDone = prompt("Is the task done (y/n)");
        
-        // let isDone = false;
-        // if (newDone.toLowerCase() == 'y' ) {
-        //      isDone = true;
-        // } else {
-        //   console.log("task is not updated");
-        // }
         document.querySelector("#saveBtn2").addEventListener('click', function (){
           console.log("this is save button");
           updateTask(data.customerData, todoData[i].id, newTaskName.value, newLocation.value, newMaterial.value, newQuantity.value, newDays.value);
           saveData(data);
           showData(todoData);
-
       })
          showData(todoData);
     })
@@ -82,6 +68,7 @@ async function showData(todoData) {
           deleteTask(data.customerData,  todoData[i].id);
           showData(todoData);
       }
+      saveData(data);
   })
 
    }
@@ -126,6 +113,8 @@ function createNewCustomer(data) {
 
    addTask(data, nameInput, locationInput, materialInput, quantityInput, daysInput);
    showData(data);
+   let allInputs = document.querySelectorAll('input');
+   allInputs.forEach(singleInput => singleInput.value = '');
   });
 }
 
